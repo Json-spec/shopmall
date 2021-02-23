@@ -22,9 +22,9 @@
         <project.junit.version>4.12</project.junit.version>
         <project.log4j.version>1.2.17</project.log4j.version>
         <project.lombok.version>1.16.18</project.lombok.version>
-        <project.mysql.version>5.1.47</project.mysql.version>
+        <project.mysql.version>8.0.13</project.mysql.version>
         <project.druid.version>1.1.16</project.druid.version>
-        <project.mybatis.spring.boot.version>1.3.0</project.mybatis.spring.boot.version>
+        <project.mybatis.spring.boot.version>2.3.0</project.mybatis.spring.boot.version>
     </properties>
 
     <!--子模块继承之后，提供作用：锁定版本+子模块不用写version-->
@@ -67,11 +67,11 @@
                 <version>${project.druid.version}</version>
             </dependency>
             <!--mybatis的启动类坐标版本-->
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
+           <!-- <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${project.mybatis.spring.boot.version}</version>
-            </dependency>
+            </dependency>-->
             <!--测试坐标junit版本-->
             <dependency>
                 <groupId>junit</groupId>

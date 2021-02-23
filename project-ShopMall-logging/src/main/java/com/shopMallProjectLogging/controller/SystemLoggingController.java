@@ -11,10 +11,7 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -44,5 +41,13 @@ public class SystemLoggingController {
         }else{
             return new ResultConfig(400,"操作失败",null);
         }
+    }
+
+    @GetMapping("/query")
+    @SystemLoggling
+    @ApiOperation(value = "测试接口1")
+    public SysLog getQuery(){
+        SysLog sysLog = systemLogglingServer.query();
+        return sysLog;
     }
 }

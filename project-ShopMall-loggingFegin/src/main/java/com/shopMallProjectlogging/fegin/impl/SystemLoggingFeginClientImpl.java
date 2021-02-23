@@ -16,6 +16,11 @@ public class SystemLoggingFeginClientImpl implements FallbackFactory<SystemLoggi
             public int savaLog(SysLog sysLog) {
                 return 0;
             }
+
+            @Override
+            public SysLog getQuery() {
+                return null;
+            }
         };
     }
 }

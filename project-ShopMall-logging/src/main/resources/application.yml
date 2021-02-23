@@ -20,15 +20,18 @@ spring:
         server-addr: localhost:8848
 
 mybatis-plus:
-  mapper-locations: classpath:mapper/*.Mapper.xml
+  mapper-locations: classpath*:/mapper/*/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
+    # 逻辑删除配置
     db-config:
-      id-type: auto
-      logic-delete-value: 0
+      # 删除前
       logic-not-delete-value: 1
-      db-type: mysql
-    refresh-mapper: true
-    refresh: false
+      # 删除后
+      logic-delete-value: 0
 
 
   aop:

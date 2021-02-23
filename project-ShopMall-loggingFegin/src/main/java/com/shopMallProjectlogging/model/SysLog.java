@@ -1,6 +1,12 @@
 package com.shopMallProjectlogging.model;
 
+
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
+
 public class SysLog {
+	@TableId(value ="id",type = IdType.AUTO)
+	private Long id;
 	/** 日志ID */
 	private String logId;
 	/** 员工号 */
@@ -35,6 +41,14 @@ public class SysLog {
 	 * 异常信息
 	 */
 	private String exceptionMessage;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getLogId() {
 		return logId;

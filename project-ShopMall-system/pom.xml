@@ -51,6 +51,11 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.62</version>
         </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>2.3</version>
+        </dependency>
         <!--引入项目中的模块(project-generalSystem-common)-->
         <!--共用模块-->
         <dependency>

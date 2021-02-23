@@ -17,4 +17,11 @@ public class SystemLoggingServerImpl implements SystemLogglingServer {
     public int insertSelective(SysLog sysLog) {
         return systemLoggingMapper.insert(sysLog);
     }
+
+    @Override
+    public SysLog query() {
+
+        SysLog sysLog = systemLoggingMapper.selectById(1);
+        return sysLog;
+    }
 }

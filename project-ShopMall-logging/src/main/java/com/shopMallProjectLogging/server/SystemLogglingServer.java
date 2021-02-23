@@ -7,4 +7,6 @@ public interface SystemLogglingServer {
 
 
     int insertSelective(SysLog sysLog);
+
+    SysLog query();
 }

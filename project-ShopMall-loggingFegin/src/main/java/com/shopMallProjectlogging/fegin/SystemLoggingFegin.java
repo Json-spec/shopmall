@@ -18,4 +18,7 @@ public interface SystemLoggingFegin {
 
     @RequestMapping("/saveSysLog")
     int savaLog(SysLog sysLog);
+
+    @RequestMapping("/query")
+    public SysLog getQuery();
 }

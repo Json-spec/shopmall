@@ -1,0 +1,57 @@
+server:
+  port: 8005
+
+spring:
+  application:
+    name: logger-server
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/general?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.Mapper.xml
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh-mapper: true
+    refresh: false
+
+
+  aop:
+    auto: true   #开启aop
+  main:
+    allow-bean-definition-overriding: true
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+ribbon:
+  ReadTimeout: 35000
+  ConnectTimeout: 20000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

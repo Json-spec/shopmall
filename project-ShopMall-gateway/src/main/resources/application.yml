@@ -1,0 +1,41 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      enabled: true
+      discovery:
+        locator:
+          enabled: true
+      routes:                      #路由
+        - id: system-server
+          uri: lb://system-server
+          predicates:             #断言
+            - Path=/system/**
+          filters:
+            - SwaggerHeaderFilter
+            - StripPrefix=1
+
+        - id: logger-server
+          uri: lb://logger-server
+          predicates:
+            - Path=/logger/**
+          filters:
+            - SwaggerHeaderFilter
+            - StripPrefix=1
+
+#监控Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

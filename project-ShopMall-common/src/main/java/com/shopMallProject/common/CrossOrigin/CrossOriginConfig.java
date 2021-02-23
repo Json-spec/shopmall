@@ -16,7 +16,7 @@ import org.springframework.web.filter.CorsFilter;
  *//*
 
 public class CrossOriginConfig {
-    */
+
 /**
      * 解决前后端分离跨域问题
      * @return
